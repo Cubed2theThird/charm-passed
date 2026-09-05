@@ -1,6 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.json">
     <link rel="icon"
           type="image/svg+xml"
           href="data:image/svg+xml;base64," />
@@ -656,25 +657,25 @@
        */
       document.addEventListener("DOMContentLoaded", function() {
         const params = new URLSearchParams(document.location.search);
-
+          const element = document.getElementById('servicename');
+            const color1 = document.getElementById('headercolor');
+            const color2 = document.getElementById('codecolor');
           if (params.get("servicename") === "Commuter Bus") {
-            const element = document.getElementById('servicename');
+            
             element.setAttribute('xlink:href', '#path2');
             element.setAttribute('href', '#path2');
+              
+            color1.setAttribute('fill', '#086623');
+            color2.setAttribute('fill', '#086623');  
           }
 
         else if (params.get("servicename") === "MARC Train") {
-            const element = document.getElementById('servicename');
-            const color1 = document.getElementById('headercolor');
-            const color2 = document.getElementById('codecolor');
-
+            
             element.setAttribute('xlink:href', '#path3');
             element.setAttribute('href', '#path3');
 
             color1.setAttribute('fill', '#364070');
             color2.setAttribute('fill', '#4a578c');
-
-
           }
       });
 
